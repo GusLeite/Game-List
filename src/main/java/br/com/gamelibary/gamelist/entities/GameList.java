@@ -2,6 +2,8 @@ package br.com.gamelibary.gamelist.entities;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "tb_game_list")
 public class GameList {
@@ -20,12 +22,19 @@ public class GameList {
 
     @Override
     public boolean equals(Object obj) {
-        return super.equals(obj);
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        GameList other = (GameList) obj;
+        return Objects.equals(id, other.id);
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(id);
     }
 
     public Long getId() {
