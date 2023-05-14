@@ -102,6 +102,14 @@ public class Game {
         this.longDescription = longDescription;
     }
 
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
